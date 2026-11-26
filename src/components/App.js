@@ -1,13 +1,21 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import FlightSearch from './FlightSearch';
+import FlightBooking from './FlightBooking';
+import Confirmation from './Confirmation';
 
-import React from "react";
-import './../styles/App.css';
-
-const App = () => {
+function App() {
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/flight-search" element={<FlightSearch />} />
+        <Route path="/flight-booking" element={<FlightBooking />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
